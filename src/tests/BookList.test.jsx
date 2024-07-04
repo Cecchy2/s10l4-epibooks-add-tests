@@ -6,6 +6,7 @@ import history from "../data/history.json";
 import horror from "../data/horror.json";
 import romance from "../data/romance.json";
 import scifi from "../data/scifi.json";
+import userEvent from "@testing-library/user-event";
 
 describe("bootstrap cards rendered equals to number of books in the json file", () => {
   it("Render the correct number of cards for fantasy Genre", async () => {
@@ -72,6 +73,8 @@ describe("bootstrap cards rendered equals to number of books in the json file", 
       expect(selectedBook).toHaveClass("selected-card");
     };
 
+  /* --------------Test carta selezionata----------- */
+
   it("properly card become red bordered after click"),
     async () => {
       render(<BookList />);
@@ -84,5 +87,17 @@ describe("bootstrap cards rendered equals to number of books in the json file", 
       expect(selectedBook).not.toHaveClass("selected-card");
 
       expect(secondBook).toHaveClass("selected-card");
+    };
+
+  /* -----------Test funzionamento Input-------------- */
+
+  it("input filter works properly"),
+    async () => {
+      const inputField = await screen.getByPlaceholderText(/Cerca il tuo libro/i);
+
+      fireEvent.change(inputField, { target: { value: "some book" } });
+
+      const filteredResults = await screen.findAllByText(/game/i);
+      expect(filteredResults).toHaveLength(2);
     };
 });
