@@ -46,16 +46,6 @@ const CommentArea = ({ asin }) => {
       console.error("Errore nella fetch", err);
     }
   };
-
-  /* componentDidMount() {
-    this.fetchReviews(this.props.asin);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.asin !== this.props.asin) {
-      this.fetchReviews(this.props.asin);
-    }
-  } */
   useEffect(() => {
     fetchReviews();
   }, [asin]);

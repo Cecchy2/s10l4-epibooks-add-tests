@@ -9,13 +9,6 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import CommentArea from "./CommentArea";
 
 const BookList = () => {
-  /* state = {
-    books: fantasy,
-    searchBar: "",
-    selected: false,
-    selectedBookAsin: null,
-  }; */
-
   const [books, setBooks] = useState(fantasy);
   const [searchBar, setSearchBar] = useState("");
   const [selected, setSelected] = useState(false);

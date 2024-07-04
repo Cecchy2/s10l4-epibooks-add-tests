@@ -13,7 +13,7 @@ function App() {
       <MyNav />
       <Container fluid>
         <Welcome />
-        <h1>Questo e il mio primo test</h1>
+
         <BookList />
       </Container>
       <MyFooter />

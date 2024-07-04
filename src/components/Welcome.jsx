@@ -7,11 +7,8 @@ function Welcome() {
       <Row>
         <Col className="text-center">
           <h1>Benvenuti nel mio BookShoop</h1>
-          {["dark"].map((variant) => (
-            <Alert key={variant} variant={variant}>
-              Tutti i Libri al 50%
-            </Alert>
-          ))}
+
+          <Alert variant={"dark"}>Tutti i Libri al 50%</Alert>
         </Col>
       </Row>
     </>
