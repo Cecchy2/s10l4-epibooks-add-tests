@@ -52,6 +52,8 @@ describe("bootstrap cards rendered equals to number of books in the json file", 
       expect(booksImages).toHaveLength(scifi.length);
     };
 
+  /* --------------Test carta selezionata----------- */
+
   it("properly card become red bordered after click"),
     async () => {
       render(<BookList />);
@@ -61,7 +63,7 @@ describe("bootstrap cards rendered equals to number of books in the json file", 
       expect(selectedBook).toHaveClass("selected-card");
     };
 
-  /* --------------Test carta selezionata----------- */
+  /* --------------Test selezione altra card---------- */
 
   it("properly card become red bordered after click"),
     async () => {
